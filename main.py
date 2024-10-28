@@ -83,7 +83,7 @@ def call_groq_api(text: str) -> dict:
         return {"error": "Error in Groq API"}
 
 
-@app.post("/api/upload/img")
+@app.post("/api/upload")
 def image_ocr_api(file: bytes = File(...)):
     file_path = f"uploads/{int(time())}.jpg"
     try:

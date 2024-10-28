@@ -1,9 +1,8 @@
 import json
 from models.document_model import DocumentModel
- 
 
-def get_prompt(
-):
+
+def get_prompt():
     return f"""
         Extract the desired information from the following text that was extracted from the image using OCR.
 
@@ -13,6 +12,8 @@ def get_prompt(
         Do not remove any fields from the JSON schema mentioned:
         
         Extract the relevant information of fuel invoice. The JSON schema is listed below:
+        Volume, and amount are either integer or floating point numbers.
+        Exclude the units of volume and/or units of currency, if present.
         
         {json.dumps(DocumentModel.model_json_schema(), indent=2)}
     """

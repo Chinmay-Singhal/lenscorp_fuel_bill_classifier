@@ -1,0 +1,11 @@
+bin/
+include/
+lib/
+lib64/
+share/
+lib64
+Scripts/
+.vscode/
+__pycache__/
+pyvenv.cfg
+env.py
